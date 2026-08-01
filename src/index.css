@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-utility: "Outfit", sans-serif;
+
+  --color-bg: #0b0d10;
+  --color-surface: #12151a;
+  --color-surface-2: #181c22;
+  --color-line: rgba(255, 255, 255, 0.09);
+
+  --color-text: #eceef0;
+  --color-muted: #8b93a0;
+
+  --color-accent: #17a398;
+  --color-accent-soft: #17a39822;
+  --color-amber: #e8a33d;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #04100e;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-2);
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-utility {
+    font-family: var(--font-utility);
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(120deg, var(--color-text), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .noise-grid {
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Layered radial gradient replacing the flat black background. */
+  .bg-gradient-mesh {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(ellipse 60% 45% at 12% -5%, rgba(23, 163, 152, 0.20), transparent 60%),
+      radial-gradient(ellipse 55% 40% at 105% 15%, rgba(232, 163, 61, 0.13), transparent 60%),
+      radial-gradient(ellipse 70% 55% at 50% 105%, rgba(23, 163, 152, 0.12), transparent 60%),
+      radial-gradient(ellipse 40% 30% at 60% 40%, rgba(59, 130, 246, 0.06), transparent 65%);
+    background-attachment: fixed;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
