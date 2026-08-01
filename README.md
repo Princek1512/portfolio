@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prince Kachchhi — Portfolio
 
 Single-page portfolio built with React + Vite, Tailwind CSS v4, Framer Motion,
@@ -48,3 +49,6 @@ built from the real extracurricular entry instead (CodeAdda — Club Director),
 under **Leadership**. Skills and Projects reflect only what's on the resume
 (no Spring Boot / Django / Kafka, no Coastal Threat Alert / Financial
 Dashboard projects — those weren't in the source resume).
+=======
+# portfolio
+>>>>>>> cafd385dd2ed1bf2ec8ade9a43aaa5ab2f0f643b
